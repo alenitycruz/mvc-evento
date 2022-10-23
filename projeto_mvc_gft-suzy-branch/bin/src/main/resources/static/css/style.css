@@ -1,0 +1,18 @@
+#logo{
+	font-size: 30px;
+	margin-bottom: 20%;
+}
+
+a{
+	color: black!important;
+	font-size: 21px;
+}
+
+li:hover{
+	background-color: #808080;
+	font-size: 25px;
+}
+
+#heart{
+	color: red;
+}
