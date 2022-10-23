@@ -67,12 +67,7 @@ public class Pontuacao implements Serializable {
 		return total;
 	}
 
-	public Integer calcularGrupo() {
-
-		this.calcularParticipante();
-
-		return null;
-	}
+	
 
 	public Long getId_pontuacao() {
 		return id_pontuacao;

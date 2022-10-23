@@ -1,6 +1,7 @@
 package com.gft.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -27,6 +28,25 @@ public class Ranking implements Serializable{
 	@OneToMany
 	@JoinColumn(name = "id_pontuacao")
 	private List<Pontuacao> pontuacoes;
+	
+	@OneToMany
+	@JoinColumn(name = "id_grupo")
+	private List<Grupo> grupos = new ArrayList<>();
+	
+	public Integer calcularGrupo() {
+
+		Integer total = 0;
+		for(Grupo grupo : grupos) {
+		for(Pontuacao pontuacao : pontuacoes) {
+			
+				if(grupo.getParticipantes() == pontuacao.getParticipantes()) {
+					total += pontuacao.calcularParticipante();
+				}
+			}
+		}
+
+		return total;
+	}
 
 	public Long getId_raking() {
 		return id_raking;
